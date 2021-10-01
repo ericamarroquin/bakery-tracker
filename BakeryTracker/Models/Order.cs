@@ -30,5 +30,10 @@ namespace BakeryTracker.Models
     {
       _orders.Clear();
     }
+
+    public static Order Find(int orderId)
+    {
+      return _orders[orderId - 1];
+    }
   }
 }

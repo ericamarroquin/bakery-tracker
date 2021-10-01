@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+@using BakeryTracker.Models;
+
+<h2>Order details:</h2>
+<h3>@Model["order"].OrderTitle</h3>
+<h5>@Model["order"].OrderDescription</h5>
+<h5>@Model["order"].OrderPrice</h5>
+<h5>@Model["order"].OrderDate</h5>
+
+<button>
+  <a href='/vendors/@Model["category"].Id/orders'>Return to order list</a>
+</button>
+
+<button>
+  <a href="/vendors">Return to all vendors</a>
+</button>
