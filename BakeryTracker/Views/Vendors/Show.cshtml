@@ -3,17 +3,18 @@
 }
 @using BakeryTracker.Models;
 
-<h4>All current orders for @Model["vendor"].VendorName</h4>
+<h2>All current orders for @Model["vendor"].VendorName</h2>
+<p>Vendor info: @Model["vendor"].VendorDescription</p>
 
 <ul>
   @foreach (Order order in @Model["orders"])
   {
-    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrderTitle</a></li>
+    <li><h5><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrderTitle</a></h5></li>
   }
 </ul>
 
 <button>
-  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add order</a>
 </button>
 <button>
   <a href="/vendors">Return to all vendors</a>
