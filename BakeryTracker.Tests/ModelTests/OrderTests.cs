@@ -6,12 +6,12 @@ using BakeryTracker.Models;
 namespace BakeryTracker.Tests
 {
   [TestClass]
-  public class OrderTests //: IDisposable
+  public class OrderTests : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Order.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
@@ -54,6 +54,16 @@ namespace BakeryTracker.Tests
       Order newOrder = new Order("title", "description", 1, date);
       string result = newOrder.OrderDate;
       Assert.AreEqual(date, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      Order newOrder1 = new Order("title", "description", 1, "date");
+      Order newOrder2 = new Order("title2", "description2", 2, "date2");
+      List<Order> newList = new List<Order> {newOrder1, newOrder2};
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
