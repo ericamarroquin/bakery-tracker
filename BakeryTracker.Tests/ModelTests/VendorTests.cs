@@ -6,12 +6,12 @@ using System;
 namespace BakeryTracker.Tests
 {
   [TestClass]
-  public class VendorTests //: IDisposable
+  public class VendorTests : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Vendor.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -30,6 +30,15 @@ namespace BakeryTracker.Tests
       string descriptionResult = newVendor.VendorDescription;
       Assert.AreEqual(name, nameResult);
       Assert.AreEqual(description, descriptionResult);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnVendorID_Int()
+    {
+      Vendor newVendor = new Vendor("name", "description");
+      int id = 1;
+      int result = newVendor.Id;
+      Assert.AreEqual(id, result);
     }
   }
 }
