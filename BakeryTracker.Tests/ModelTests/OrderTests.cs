@@ -46,5 +46,14 @@ namespace BakeryTracker.Tests
       int result = newOrder.OrderPrice;
       Assert.AreEqual(price, result);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    {
+      string date = "10/1/2021";
+      Order newOrder = new Order("title", "description", 1, date);
+      string result = newOrder.OrderDate;
+      Assert.AreEqual(date, result);
+    }
   }
 }
