@@ -33,5 +33,10 @@ namespace BakeryTracker.Models
     {
       return _vendors[vendorId - 1];
     }
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
   }
 }
