@@ -28,5 +28,14 @@ namespace BakeryTracker.Tests
       string result = newOrder.OrderTitle;
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "fries";
+      Order newOrder = new Order("title", description, 1, "date");
+      string result = newOrder.OrderDescription;
+      Assert.AreEqual(description, result);
+    }
   }
 }
